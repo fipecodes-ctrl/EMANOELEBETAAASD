@@ -1,185 +1,181 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Emanoel & Beta</title>
- 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emanoel Beta - Central da Zoeira Suprema</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
- 
+    * { margin:0; padding:0; box-sizing:border-box; }
+
     body {
-      background: radial-gradient(circle at top, #222, #000);
-      color: #fff;
-      min-height: 100vh;
-    }
- 
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
+      font-family: Comic Sans MS, cursive;
+      background: linear-gradient(135deg, #ff00cc, #3333ff, #00ff99);
+      background-size: 400% 400%;
+      animation: bg 10s infinite;
+      color: white;
       text-align: center;
+      overflow-x: hidden;
     }
- 
+
+    @keyframes bg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     h1 {
-      font-size: 3.2rem;
-      margin-bottom: 10px;
-      color: #ff0055;
-      text-shadow: 0 0 10px #ff0055;
-    }
- 
-    .subtitle {
-      color: #bbb;
-      margin-bottom: 30px;
-      font-size: 1.1rem;
-    }
- 
-    .card {
-      background: #111;
-      padding: 25px;
-      border-radius: 16px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 15px #000;
-    }
- 
-    .card h2 {
-      color: #00eaff;
-      margin-bottom: 10px;
-    }
- 
-    .card p, li {
-      color: #ddd;
-      line-height: 1.6;
-    }
- 
-    ul {
-      list-style: none;
-      padding-top: 10px;
-    }
- 
-    li::before {
-      content: "💥 ";
-    }
- 
-    button {
+      font-size: 70px;
       margin-top: 20px;
-      padding: 16px 40px;
-      font-size: 1.1rem;
-      font-weight: bold;
+      text-shadow: 4px 4px black;
+      animation: shake 2s infinite;
+    }
+
+    @keyframes shake {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(2deg); }
+      50% { transform: rotate(-2deg); }
+      75% { transform: rotate(2deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .card {
+      background: rgba(0,0,0,0.7);
+      margin: 25px auto;
+      padding: 20px;
+      border-radius: 20px;
+      width: 85%;
+      box-shadow: 0 0 20px black;
+    }
+
+    button {
+      padding: 12px 25px;
       border: none;
-      border-radius: 12px;
-      background: linear-gradient(45deg, #ff0055, #ff6600);
-      color: #fff;
+      border-radius: 10px;
+      font-size: 18px;
       cursor: pointer;
-      transition: all 0.2s;
-      box-shadow: 0 0 15px #ff0055;
+      background: yellow;
+      font-weight: bold;
+      transition: 0.2s;
     }
- 
+
     button:hover {
-      transform: scale(1.07) rotate(-1deg);
-      box-shadow: 0 0 25px #ff6600;
+      transform: scale(1.2);
+      background: red;
+      color: white;
     }
- 
-    #zoeira {
-      margin-top: 25px;
-      font-size: 1.3rem;
-      color: #ffcc00;
-      min-height: 50px;
+
+    .rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
     }
- 
-    footer {
-      margin-top: 60px;
-      font-size: 0.8rem;
-      color: #666;
+
+    .emoji {
+      position: absolute;
+      font-size: 25px;
+      animation: fall linear infinite;
     }
- 
-    .contador {
-      font-size: 2rem;
-      color: #00ff88;
-      margin-top: 10px;
+
+    @keyframes fall {
+      0% { transform: translateY(-100px); }
+      100% { transform: translateY(100vh); }
     }
-</style>
+
+  </style>
 </head>
- 
 <body>
-<main>
-<h1>🔥 EMANOEL & BETA 🔥</h1>
-<p class="subtitle">
-      A dupla que transforma qualquer ideia simples em algo complicado
-</p>
- 
-    <div class="card">
-<h2>🧠 Quem são?</h2>
-<p>
-        Especialistas em começar projetos incríveis e abandonar
-        antes do README ficar pronto.
-<br><br>
-<strong>Emanoel</strong> pensa tanto que esquece de executar.
-<br>
-<strong>Beta</strong> executa tão rápido que esquece de pensar.
-</p>
-</div>
- 
-    <div class="card">
-<h2>📊 Estatísticas Oficiais</h2>
-<ul>
-<li>98%: “relaxa, depois a gente arruma”</li>
-<li>1%: funciona sem saber por quê</li>
-<li>1%: deu certo por acidente</li>
-<li>100%: confiança sem fundamento</li>
-</ul>
-</div>
- 
-    <div class="card">
-<h2>⏱️ Projetos abandonados</h2>
-<div class="contador" id="contador">0</div>
-<p>(o contador nunca para)</p>
-</div>
- 
-    <button onclick="zoar()">Clique para ativar a zoeira 🚨</button>
- 
-    <p id="zoeira"></p>
- 
-    <footer>
-      © 2026 — Site não homologado por Emanoel nem por Beta<br>
-      Qualquer semelhança com a realidade é pura coincidência (ou não)
-</footer>
-</main>
- 
+
+  <h1>🤡 EMANOEL BETA 🤡</h1>
+  <p>O único cara que vive em versão beta desde 2003</p>
+
+  <div class="card">
+    <h2>📉 Status do Emanoel</h2>
+    <p>Carregando... 2%... erro... reiniciando...</p>
+    <p>Resultado: continua beta 💀</p>
+  </div>
+
+  <div class="card">
+    <h2>🧠 Inteligência Artificial do Emanoel</h2>
+    <p>Processando...</p>
+    <p>Erro 404: cérebro não encontrado 🤡</p>
+  </div>
+
+  <div class="card">
+    <h2>📢 Frases clássicas do Emanoel Beta</h2>
+    <ul>
+      <li>"agora vai" → nunca vai</li>
+      <li>"é rapidinho" → 3 horas depois</li>
+      <li>"confia" → pior decisão da sua vida</li>
+      <li>"tô quase pronto" → nunca esteve</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🎮 Teste: Você é mais evoluído que o Emanoel?</h2>
+    <button onclick="teste()">CLIQUE AQUI</button>
+    <p id="resultado"></p>
+  </div>
+
+  <div class="card">
+    <h2>🚨 Botão proibido</h2>
+    <button onclick="explodir()">NÃO CLICA</button>
+  </div>
+
+  <div class="card">
+    <h2>📊 Nível Beta do Emanoel</h2>
+    <p id="nivel">Calculando...</p>
+  </div>
+
+  <div class="rain" id="rain"></div>
+
   <script>
-    const zoacoes = [
-      "Emanoel disse: 'isso é rápido' — já faz 6 meses.",
-      "Beta: 'deploy direto em produção, fé em Deus'",
-      "Funciona? Sim. Sabe como? Não.",
-      "Bug crítico resolvido com um console.log.",
-      "Planejamento nível: vamos ver no que dá.",
-      "Commit message: 'ajustes'. Ninguém sabe quais.",
-      "Rodou na máquina do Beta, então tá certo.",
-      "Emanoel prometeu documentar. Prometeu apenas.",
-      "Stack Overflow foi consultado espiritualmente."
-    ];
- 
-    function zoar() {
-      const random = Math.floor(Math.random() * zoacoes.length);
-      document.getElementById("zoeira").innerText = zoacoes[random];
-      incrementar();
+    function teste() {
+      const respostas = [
+        "Parabéns, você é 100% melhor que o Emanoel 😂",
+        "Até uma batata é mais avançada 🥔",
+        "Você ganhou! Emanoel continua beta 🤡",
+        "Nível detectado: superior ao Emanoel 💀"
+      ];
+      document.getElementById('resultado').innerText = respostas[Math.floor(Math.random() * respostas.length)];
     }
- 
-    let count = 0;
- 
-    function incrementar() {
-      count += Math.floor(Math.random() * 3) + 1;
-      document.getElementById("contador").innerText = count;
+
+    function explodir() {
+      alert("💥 BOOM 💥 Você quebrou o sistema do Emanoel Beta!");
+      document.body.style.background = "black";
     }
- 
-    // contador automático só pra zoar mais
+
+    function nivelBeta() {
+      let nivel = Math.floor(Math.random() * 100);
+      document.getElementById('nivel').innerText = nivel + "% BUGADO";
+    }
+
+    nivelBeta();
+
+    // chuva de emoji
+    function criarEmoji() {
+      const emojis = ["🤡","💀","😂","🔥","🐒"];
+      const span = document.createElement('span');
+      span.classList.add('emoji');
+      span.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      span.style.left = Math.random() * 100 + "vw";
+      span.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.getElementById('rain').appendChild(span);
+
+      setTimeout(() => span.remove(), 5000);
+    }
+
+    setInterval(criarEmoji, 200);
+
+    // zoeira automática
     setInterval(() => {
-      incrementar();
+      console.log("Emanoel ainda está em beta...");
     }, 3000);
-</script>
+
+  </script>
+
 </body>
 </html>
