@@ -1,185 +1,212 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Emanoel & Beta</title>
+<meta charset="UTF-8">
+<title>Emanoel & Beta — Caos Oficial</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Comic Sans MS, Arial, sans-serif;
+}
 
-    body {
-      background: radial-gradient(circle at top, #222, #000);
-      color: #fff;
-      min-height: 100vh;
-    }
+body {
+  background: linear-gradient(120deg, #000, #1a1a1a);
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-      text-align: center;
-    }
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
 
-    h1 {
-      font-size: 3.2rem;
-      margin-bottom: 10px;
-      color: #ff0055;
-      text-shadow: 0 0 10px #ff0055;
-    }
+h1 {
+  font-size: 3.5rem;
+  color: #ff004c;
+  text-shadow: 0 0 15px #ff004c;
+  animation: piscar 1s infinite alternate;
+}
 
-    .subtitle {
-      color: #bbb;
-      margin-bottom: 30px;
-      font-size: 1.1rem;
-    }
+@keyframes piscar {
+  from { opacity: 1; }
+  to { opacity: 0.6; }
+}
 
-    .card {
-      background: #111;
-      padding: 25px;
-      border-radius: 16px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 15px #000;
-    }
+.subtitle {
+  margin: 15px 0 35px;
+  color: #bbb;
+}
 
-    .card h2 {
-      color: #00eaff;
-      margin-bottom: 10px;
-    }
+.card {
+  background: #111;
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 20px #000;
+}
 
-    .card p, li {
-      color: #ddd;
-      line-height: 1.6;
-    }
+.card h2 {
+  margin-bottom: 10px;
+  color: #00f0ff;
+}
 
-    ul {
-      list-style: none;
-      padding-top: 10px;
-    }
+button {
+  padding: 15px 35px;
+  margin: 10px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff004c, #ff9900);
+  color: #fff;
+  box-shadow: 0 0 15px #ff004c;
+  transition: 0.2s;
+}
 
-    li::before {
-      content: "💥 ";
-    }
+button:hover {
+  transform: scale(1.1) rotate(-2deg);
+}
 
-    button {
-      margin-top: 20px;
-      padding: 16px 40px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 12px;
-      background: linear-gradient(45deg, #ff0055, #ff6600);
-      color: #fff;
-      cursor: pointer;
-      transition: all 0.2s;
-      box-shadow: 0 0 15px #ff0055;
-    }
+.escape {
+  position: relative;
+}
 
-    button:hover {
-      transform: scale(1.07) rotate(-1deg);
-      box-shadow: 0 0 25px #ff6600;
-    }
+#mensagem {
+  margin-top: 25px;
+  font-size: 1.4rem;
+  min-height: 60px;
+  color: #ffcc00;
+}
 
-    #zoeira {
-      margin-top: 25px;
-      font-size: 1.3rem;
-      color: #ffcc00;
-      min-height: 50px;
-    }
+.contador {
+  font-size: 2.2rem;
+  color: #00ff88;
+}
 
-    footer {
-      margin-top: 60px;
-      font-size: 0.8rem;
-      color: #666;
-    }
+.barra {
+  width: 100%;
+  height: 24px;
+  background: #333;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 10px;
+}
 
-    .contador {
-      font-size: 2rem;
-      color: #00ff88;
-      margin-top: 10px;
-    }
-  </style>
+#sanidade {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #00ff88, #ff004c);
+  transition: width 0.3s;
+}
+
+.caos {
+  animation: tremer 0.2s infinite;
+}
+
+@keyframes tremer {
+  0% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, 2px); }
+  100% { transform: translate(2px, 2px); }
+}
+
+footer {
+  margin-top: 60px;
+  font-size: 0.8rem;
+  color: #666;
+}
+</style>
 </head>
 
 <body>
-  <main>
-    <h1>🔥 EMANOEL & BETA 🔥</h1>
-    <p class="subtitle">
-      A dupla que transforma qualquer ideia simples em algo complicado
+<main id="site">
+
+  <h1>🔥 EMANOEL & BETA 🔥</h1>
+  <p class="subtitle">Nada aqui foi planejado. Absolutamente nada.</p>
+
+  <div class="card">
+    <h2>🧠 Explicação Oficial</h2>
+    <p>
+      Emanoel pensa, Beta executa, nenhum dos dois testa.
+      <br><br>
+      Juntos, criam experiências inesquecíveis… principalmente pelos erros.
     </p>
+  </div>
 
-    <div class="card">
-      <h2>🧠 Quem são?</h2>
-      <p>
-        Especialistas em começar projetos incríveis e abandonar
-        antes do README ficar pronto.
-        <br><br>
-        <strong>Emanoel</strong> pensa tanto que esquece de executar.
-        <br>
-        <strong>Beta</strong> executa tão rápido que esquece de pensar.
-      </p>
+  <div class="card">
+    <h2>📈 Projetos Abandonados</h2>
+    <div class="contador" id="contador">0</div>
+    <p>Cresce mais rápido que promessa de feature</p>
+  </div>
+
+  <div class="card">
+    <h2>🧠 Sanidade do Visitante</h2>
+    <div class="barra">
+      <div id="sanidade"></div>
     </div>
+    <p>(cada clique piora)</p>
+  </div>
 
-    <div class="card">
-      <h2>📊 Estatísticas Oficiais</h2>
-      <ul>
-        <li>98%: “relaxa, depois a gente arruma”</li>
-        <li>1%: funciona sem saber por quê</li>
-        <li>1%: deu certo por acidente</li>
-        <li>100%: confiança sem fundamento</li>
-      </ul>
-    </div>
+  <button onclick="zoar()">Ativar Zoeira</button>
+  <button onclick="modoCaos()">🔥 MODO CAOS 🔥</button>
+  <button class="escape" id="botaoFoge">Clique aqui confia</button>
 
-    <div class="card">
-      <h2>⏱️ Projetos abandonados</h2>
-      <div class="contador" id="contador">0</div>
-      <p>(o contador nunca para)</p>
-    </div>
+  <p id="mensagem"></p>
 
-    <button onclick="zoar()">Clique para ativar a zoeira 🚨</button>
+  <footer>
+    © 2026 — Site aprovado pelo Instituto do Caos<br>
+    Nenhum Emanoel ou Beta revisou isso
+  </footer>
 
-    <p id="zoeira"></p>
+</main>
 
-    <footer>
-      © 2026 — Site não homologado por Emanoel nem por Beta<br>
-      Qualquer semelhança com a realidade é pura coincidência (ou não)
-    </footer>
-  </main>
+<script>
+const frases = [
+  "Funcionava ontem.",
+  "Depois a gente arruma.",
+  "Deploy sexta-feira sim.",
+  "É só mais um hotfix.",
+  "Na minha máquina roda.",
+  "Beta clicou sem ler.",
+  "Emanoel prometeu documentar.",
+  "Isso é feature, não bug.",
+  "Confia."
+];
 
-  <script>
-    const zoacoes = [
-      "Emanoel disse: 'isso é rápido' — já faz 6 meses.",
-      "Beta: 'deploy direto em produção, fé em Deus'",
-      "Funciona? Sim. Sabe como? Não.",
-      "Bug crítico resolvido com um console.log.",
-      "Planejamento nível: vamos ver no que dá.",
-      "Commit message: 'ajustes'. Ninguém sabe quais.",
-      "Rodou na máquina do Beta, então tá certo.",
-      "Emanoel prometeu documentar. Prometeu apenas.",
-      "Stack Overflow foi consultado espiritualmente."
-    ];
+let projetos = 0;
+let sanidade = 100;
 
-    function zoar() {
-      const random = Math.floor(Math.random() * zoacoes.length);
-      document.getElementById("zoeira").innerText = zoacoes[random];
-      incrementar();
-    }
+function zoar() {
+  const msg = frases[Math.floor(Math.random() * frases.length)];
+  document.getElementById("mensagem").innerText = msg;
 
-    let count = 0;
+  projetos += Math.floor(Math.random() * 5) + 1;
+  document.getElementById("contador").innerText = projetos;
 
-    function incrementar() {
-      count += Math.floor(Math.random() * 3) + 1;
-      document.getElementById("contador").innerText = count;
-    }
+  sanidade -= Math.floor(Math.random() * 15);
+  if (sanidade < 0) sanidade = 0;
+  document.getElementById("sanidade").style.width = sanidade + "%";
+}
 
-    // contador automático só pra zoar mais
-    setInterval(() => {
-      incrementar();
-    }, 3000);
-  </script>
-</body>
-</html>
+function modoCaos() {
+  document.getElementById("site").classList.toggle("caos");
+  document.body.style.background =
+    "linear-gradient(120deg, #" + Math.floor(Math.random()*999999) + ", #000)";
+}
+
+const botaoFoge = document.getElementById("botaoFoge");
+
+botaoFoge.addEventListener("mouseover", () => {
+  const x = Math.random() * 300 - 150;
+  const y = Math.random() * 300 - 150;
+  botaoFoge.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+setInterval(() => {
+  projetos++;
